@@ -12,10 +12,10 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
   int id=0;
   bool loading = true;
-  List<Post> posts = [];
+  List<User> posts = [];
 
   getposts() async {
-    posts = await Service().getPosts();
+    posts = await Service().getUsers();
     loading = false;
     setState(() {});
   }
@@ -50,12 +50,7 @@ class _PostScreenState extends State<PostScreen> {
                         style: style,
                         onPressed: () {
                           increament();
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => page2(
-                                        posts: posts, Id: id,
-                                      )));
+                          ;
                         },
                         child: const Text('Show Posts'),
                       ),

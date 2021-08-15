@@ -1,17 +1,19 @@
 import 'package:login/model.dart';
 import 'package:dio/dio.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Service {
   String base = 'https://jsonplaceholder.typicode.com/';
   String post = 'posts';
+  String user = 'users';
 
-  Future<List<Post>> getPosts() async {
-    Response res = await Dio().get("$base$post");
-    List<Post> posts=[];
+  Future<List<User>> getUsers() async {
+    Response res = await Dio().get("$base$user");
+    List<User> Users=[];
     var data=res.data;
     data.forEach((element){
-     posts.add(Post.fromJson(element));
+     Users.add(User.fromJson(element));
     });
-    return posts;
+    return Users;
   }
 }

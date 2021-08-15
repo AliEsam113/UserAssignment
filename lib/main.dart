@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login/UserScreen.dart';
 import 'package:login/page2.dart';
 import 'package:login/postsScreen.dart';
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Welcome',
 
-      home: PostScreen(),
+      home: UserScreen(),
     );
   }
 }
